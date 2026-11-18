@@ -25,9 +25,9 @@ const DOCS_URL = `${GITHUB_URL}/blob/main/docs/getting-started.md`;
 const GALLERY_URL = `${GITHUB_URL}/blob/main/docs/screenshots.md`;
 
 const stats = [
-    { value: "200+", label: "GitHub Stars" },
+    { value: "100%", label: "Self-hosted" },
     { value: "44+", label: "Fitur Lengkap" },
-    { value: "MIT", label: "Open Source" },
+    { value: "AGPL", label: "Open Source" },
     { value: "8", label: "Modul Terintegrasi" },
 ];
 
@@ -159,7 +159,7 @@ export default function Welcome() {
                     <div className="text-center max-w-4xl mx-auto">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 dark:bg-primary-950/50 text-primary-600 dark:text-primary-400 text-sm font-medium mb-6 border border-primary-100 dark:border-primary-900">
                             <IconBrandGithub size={16} />
-                            Open Source · MIT License · 200+ Stars
+                            Open Source · AGPL-3.0 · Bagian dari DyskLab
                         </div>
 
                         <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight">
@@ -452,7 +452,7 @@ export default function Welcome() {
                             Siap Kelola Bisnis dengan DyskPOS?
                         </h2>
                         <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">
-                             Gratis digunakan dan dimodifikasi di bawah lisensi MIT, dengan data
+                             Gratis digunakan dan dimodifikasi di bawah lisensi GNU AGPL-3.0, dengan data
                              tetap berada di infrastruktur Anda.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

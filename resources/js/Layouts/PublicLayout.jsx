@@ -108,7 +108,7 @@ export default function PublicLayout({ children, active = "" }) {
                             GitHub
                         </a>
                         <a href={`${GITHUB_URL}/blob/main/LICENSE`} target="_blank" rel="noopener noreferrer" className="hover:text-primary-500 transition-colors">
-                            Lisensi MIT
+                            Lisensi AGPL-3.0
                         </a>
                     </div>
 
