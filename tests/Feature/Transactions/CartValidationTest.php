@@ -189,4 +189,23 @@ class CartValidationTest extends TestCase
         $this->assertSame(2, (int) $cart->qty);
         $this->assertSame(1320000, (int) $cart->price);
     }
+
+    public function test_add_to_cart_works_for_product_without_units(): void
+    {
+        $this->openShiftForCashier();
+        $product = $this->makeProduct();
+        Unit::query()->delete();
+
+        $this->from(route('transactions.index'))
+            ->post(route('transactions.addToCart'), [
+                'product_id' => $product->id,
+                'qty' => 2,
+            ])
+            ->assertRedirect(route('transactions.index'))
+            ->assertSessionHasNoErrors();
+
+        $cart = Cart::firstOrFail();
+        $this->assertNull($cart->unit_id);
+        $this->assertSame(120000, (int) $cart->price);
+    }
 }

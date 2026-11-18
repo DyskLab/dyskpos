@@ -283,7 +283,10 @@ class TransactionController extends Controller
             // Composite price = sum component prices
             $sellPrice = (int) $product->components->sum(fn ($c) => $c->sell_price * (float) $c->pivot->qty);
         } else {
-            $unitId = (int) (($validated['unit_id'] ?? null) ?: $product->baseUnit()?->id ?: 1);
+            // A product without units has no base unit: keep unit_id null instead of guessing an id
+            // (carts.unit_id is a foreign key). The conversion service treats unit 0 as "no unit":
+            // factor 1 and the product's own price.
+            $unitId = ($validated['unit_id'] ?? null) ?: $product->baseUnit()?->id;
 
             // Reject an explicitly provided unit that does not belong to this product
             if (! empty($validated['unit_id'] ?? null) && ! $product->units()->whereKey($unitId)->exists()) {
@@ -291,7 +294,7 @@ class TransactionController extends Controller
             }
 
             $unitConversion = app(UnitConversionService::class);
-            $baseQty = $unitConversion->toBaseUnit($product, $unitId, $validated['qty']);
+            $baseQty = $unitConversion->toBaseUnit($product, (int) $unitId, $validated['qty']);
 
             $availableStock = $warehouseId
                 ? (int) ($product->warehouses()->where('warehouse_id', $warehouseId)->first()?->pivot->stock ?? 0)
@@ -301,8 +304,8 @@ class TransactionController extends Controller
                 return redirect()->back()->with('error', 'Stok tidak mencukupi.');
             }
 
-            $sellPrice = $unitConversion->getSellPrice($product, $unitId);
-            $pu = $product->units()->where('unit_id', $unitId)->first();
+            $sellPrice = $unitConversion->getSellPrice($product, (int) $unitId);
+            $pu = $unitId ? $product->units()->where('unit_id', $unitId)->first() : null;
             $conversionFactor = $pu?->pivot->conversion_factor ?? 1;
         }
         if (! isset($conversionFactor)) {
