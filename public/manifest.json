@@ -1,6 +1,6 @@
 {
     "name": "DyskPOS",
-    "short_name": "POS",
+    "short_name": "DyskPOS",
     "description": "Sistem kasir online untuk UMKM",
     "start_url": "/",
     "display": "standalone",

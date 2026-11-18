@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'DyskPOS'),
 
     'version' => env('APP_VERSION', 'v3.0.3'),
 

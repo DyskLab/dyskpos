@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "dysklab/dyskpos",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "An open-source point of sale for Indonesian shops, built with Laravel, Inertia, and React.",
     "keywords": [
         "laravel",
         "framework"

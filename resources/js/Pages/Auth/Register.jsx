@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import ApplicationLogo from "@/Components/ApplicationLogo";
 import { Head, Link, useForm } from "@inertiajs/react";
 import AuthBotGuardFields from "@/Components/AuthBotGuardFields";
 import {
-    IconShoppingCart,
     IconUser,
     IconMail,
     IconLock,
@@ -43,9 +43,7 @@ export default function Register({ botGuard }) {
                 {/* Left - Decoration */}
                 <div className="hidden lg:flex flex-1 bg-gradient-to-br from-primary-500 to-primary-700 items-center justify-center p-12">
                     <div className="max-w-md text-center text-white">
-                        <div className="w-24 h-24 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-8">
-                            <IconShoppingCart size={48} />
-                        </div>
+                        <ApplicationLogo className="w-24 h-24 rounded-2xl mx-auto mb-8" />
                         <h2 className="text-3xl font-bold mb-4">
                             Bergabung Bersama Kami
                         </h2>
@@ -83,14 +81,9 @@ export default function Register({ botGuard }) {
                                 href="/"
                                 className="inline-flex items-center gap-3 mb-6"
                             >
-                                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
-                                    <IconShoppingCart
-                                        size={24}
-                                        className="text-white"
-                                    />
-                                </div>
+                                <ApplicationLogo className="w-12 h-12 rounded-xl shrink-0" />
                                 <span className="text-2xl font-bold text-slate-900 dark:text-white">
-                                    Aplikasi Kasir
+                                    DyskPOS
                                 </span>
                             </Link>
                             <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
