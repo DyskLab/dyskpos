@@ -22,7 +22,7 @@ export default function Button({
             text: "Data yang dihapus tidak dapat dikembalikan!",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#6366f1",
+            confirmButtonColor: "#10b981",
             cancelButtonColor: "#64748b",
             confirmButtonText: "Ya, Hapus!",
             cancelButtonText: "Batal",

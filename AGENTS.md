@@ -1,6 +1,6 @@
 # AGENTS.md — DyskPOS
 
-Open-source POS system (200+ stars). Laravel 13 + Inertia 3.0 + React 19.
+Open-source POS system, part of DyskLab. Laravel 13 + Inertia 3.0 + React 19.
 
 ## Important: This Repo
 
@@ -154,7 +154,7 @@ After seeding, a default `PUSAT` warehouse is created and existing product stock
 - **Routing**: Ziggy `route()` helper available
 - **Offline mode**: `resources/js/Utils/offlineDb.js` (IndexedDB via `idb`) queues transactions when offline, flushes on reconnect; idempotent via `client_uuid` — server price wins
 - **ESC/POS printing**: `resources/js/Utils/escpos.js` (WebUSB, Chromium-only; fallback `window.print()`)
-- **Tailwind tokens**: `primary` (indigo), `accent` (cyan), `success` (emerald), `warning` (amber), `danger` (rose)
+- **Tailwind tokens**: `primary` (emerald, the DyskPOS brand color), `accent` (cyan), `success` (emerald), `warning` (amber), `danger` (rose)
 - **i18n**: Indonesian (`id.json`) and English (`en.json`) in `resources/js/i18n/locales`
 
 ## Docs
